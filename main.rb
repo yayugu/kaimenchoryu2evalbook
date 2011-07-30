@@ -32,7 +32,7 @@ get '/' do
   %a{href: 'http://wiredvision.jp/blog/masui/'}
     http://wiredvision.jp/blog/masui/
   %br
-  %a{href: ''}
+  %a{href: 'http://evalbook.yayugu.net/view?source_url=#{base_url}/eval'}
     変換する
   EOF
 end
@@ -51,6 +51,7 @@ get '/eval' do
       title + body
     end.join("\n<pagebreak />\n")
     text = haml(<<-EOF) + text
+%set{force_kansuji: 'true'}
 %title
   界面潮流
 %author
