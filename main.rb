@@ -51,10 +51,10 @@ get '/eval' do
       title + body
     end.join("\n<pagebreak />\n")
     text = haml(<<-EOF) + text
-    %title
-      界面潮流
-    %author
-      増井俊之
+%title
+  界面潮流
+%author
+  増井俊之
     EOF
     @cache = text
   end
